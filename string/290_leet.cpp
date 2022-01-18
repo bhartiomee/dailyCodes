@@ -3,11 +3,11 @@ using namespace std;
 
 bool wordPattern(string pattern, string s)
 {
-  stringstream ss(s);
-  vector<string> str;
+  stringstream ss(s);  //to split the string
+  vector<string> str; 
   string word;
 
-  while (ss >> word)
+  while (ss >> word) //as we use cin>>variable
   {
     str.push_back(word);
   }
