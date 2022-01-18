@@ -45,6 +45,3 @@ int main()
   cout << wordPattern(pattern, s);
   return 0;
 }
-
-//"abba"
-//"dog cat cat dog"
