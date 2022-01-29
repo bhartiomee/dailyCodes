@@ -41,5 +41,3 @@ bool isCousins(TreeNode *root, int x, int y)
   }
   return ans;
 }
-
-//DFS
