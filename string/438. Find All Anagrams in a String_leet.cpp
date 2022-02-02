@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void generateAnagram(string s, int l, int r, unordered_set<string> &pAna);
 vector<int> findAnagrams(string s, string p)
 {
   vector<int> sChar(26, 0), pChar(26, 0), ans;
@@ -28,20 +27,7 @@ vector<int> findAnagrams(string s, string p)
   return ans;
 }
 
-void generateAnagram(string s, int l, int r, unordered_set<string> &pAna)
-{
-  if (l == r)
-    pAna.insert(s);
-  else
-  {
-    for (int i = l; i <= r; i++)
-    {
-      swap(s[i], s[l]);
-      generateAnagram(s, l + 1, r, pAna);
-      swap(s[i], s[l]);
-    }
-  }
-}
+
 int main()
 {
   string s, p;
