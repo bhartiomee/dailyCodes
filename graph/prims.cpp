@@ -20,13 +20,13 @@ int spanningTree(int n, vector<vector<int>> adj[])
 
   while (!pq.empty())
   {
-    int u = pq.top().second;
+    int u = pq.top().second; //from u
     pq.pop();
     mst[u] = 1;
     for (auto it : adj[u])
     {
-      int v = it[0];
-      int wt = it[1];
+      int v = it[0]; //to v
+      int wt = it[1]; //ka wt
       if (!mst[v] && wt < key[v])
       {
         key[v] = wt;
