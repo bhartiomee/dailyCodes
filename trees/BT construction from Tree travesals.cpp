@@ -30,3 +30,31 @@ Node *construct(int pre[], int start, int end)
 
   return root;
 }
+
+// post and ino
+unordered_map<int, int> findPos;
+int rootIdx;
+TreeNode *buildTree(vector<int> &inorder, vector<int> &postorder)
+{
+  int n = postorder.size();
+  rootIdx = n - 1;
+  for (int i = 0; i < n; i++)
+  {
+    findPos[inorder[i]] = i;
+  }
+  return construct(postorder, 0, n - 1);
+}
+
+TreeNode *construct(vector<int> &post, int start, int end)
+{
+  if (start > end || rootIdx < 0)
+    return nullptr;
+  int num = post[rootIdx];
+  int idx = findPos[num];
+  TreeNode *root = new TreeNode(num);
+  rootIdx--;
+
+  root->right = construct(post, idx + 1, end);  //reverse postorder
+  root->left = construct(post, start, idx - 1);
+  return root;
+}
