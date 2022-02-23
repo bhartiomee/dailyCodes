@@ -21,6 +21,7 @@ public:
     vector<int> adjRev[v];
     for (int i = 0; i < v; i++)
     {
+      vis[i]=0;
       for (auto j : adj[i])
       {
         adjRev[j].push_back(i);
@@ -29,7 +30,6 @@ public:
 
     int scc = 0;
 
-    vis.resize(v, 0);
     while (!stk.empty())
     {
       int node = stk.top();
