@@ -35,7 +35,7 @@ public:
             {
                 dfs(neigh, node, adj, timer);
                 lowest_time[node] = min(lowest_time[neigh], lowest_time[node]);
-                if (lowest_time[neigh] > time_of_init[node]) 
+                if (lowest_time[neigh] > time_of_init[node]) //that means only node can visit neigh
                 {
                     vector<int> tmp;
 
