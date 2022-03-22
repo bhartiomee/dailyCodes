@@ -14,6 +14,7 @@ We need to minimize abs(s1-s2), s1 and s2=>sum of parted subsets of a array
  and find minimum possible value
 
 */
+////knapsack bounded
 vector<int> eligibleSum;
 int minDifference(int arr[], int n)
 {

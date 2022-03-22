@@ -1,3 +1,4 @@
+////knapsack un-bounded (unlimited supply thats why)
 // brte force
 int cutRod(int price[], int n)
 {
