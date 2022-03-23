@@ -1,5 +1,5 @@
-//lcs
-// recursion
+// lcs
+//  recursion
 int longestCommonSubsequence(string text1, string text2)
 {
 
@@ -73,6 +73,32 @@ int longestCommonSubsequence(string text1, string text2)
         dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
     }
   }
-  return dp[n][m];
-}
+  return dp[n][m]; // if we are told to return length
+  /*for printing
+  we basically track the path we folwed to fill dp[][]
+  if same 1+dp[i-1][j-1]=> go back to cell i-1,j-1
+  if not same max of(i-1,j) ans(i,j-1) sogo back to max of cell (i-1 or j-1)
+  */
 
+  int i = n;
+  int j = m;
+  string ans="";
+  while (i >= 0 && j >= 0)
+  {
+    if (text1[i] == text2[j])
+    {
+      ans+=text1[i];
+      i--; 
+      j--;
+    }
+    else
+    {
+      if (t[i - 1][j] > t[i][j - 1])
+        i--;
+      else
+        j--;
+    }
+  }
+  reverse(ans.begin(),ans.end());
+  return ans;
+}
