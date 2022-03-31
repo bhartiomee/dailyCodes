@@ -17,9 +17,8 @@ string shortestCommonSupersequence(string str1, string str2)
   string ans = "";
   while (i > 0 && j > 0)
   {
-    if (str1[i - 1] == str1[j - 1])
+    if (str1[i - 1] == str2[j - 1])
     {
-      cout << i << j << "ist ";
       ans += str1[i - 1];
       i--;
       j--;
@@ -28,13 +27,12 @@ string shortestCommonSupersequence(string str1, string str2)
     {
       if (dp[i - 1][j] > dp[i][j - 1])
       {
-        cout << i << j << "2nd  ";
+
         ans += str1[i - 1];
         i--;
       }
       else
       {
-        cout << i << j << "3rd ";
         ans += str2[j - 1];
         j--;
       }
