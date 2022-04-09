@@ -23,7 +23,7 @@ public:
   {
     if (x == par[x])
       return x;
-    return par[x] = find(par[x]);
+    return par[x] = find(par[x]);  //path compression
   }
 
   int Union(int x, int y)
